@@ -31,9 +31,9 @@ namespace DeskBooker.Core.Processor
             };
         }
 
-        private static DeskBooking CreateDeskBooking(DeskBookingRequest request)
+        private static T Create<T>(DeskBookingRequest request) where T : DeskBookingBase, new()
         {
-            return new DeskBooking
+            return new T
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
