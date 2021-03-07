@@ -25,7 +25,7 @@ namespace DeskBooker.Core.Processor
 
             var availableDesks = _deskRepository.GetAvailableDesks(request.Date);
 
-            if (availableDesks.Count() > 0)
+            if (availableDesks.Any())
             {
                 var availableDesk = availableDesks.First();
                 var deskBooking = Create<DeskBooking>(request);
