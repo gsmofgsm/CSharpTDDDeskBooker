@@ -1,12 +1,16 @@
-﻿using DeskBooker.Core.Domain;
+﻿using DeskBooker.Core.DataInterface;
+using DeskBooker.Core.Domain;
 using System;
 
 namespace DeskBooker.Core.Processor
 {
     public class DeskingBookingRequestProcessor
     {
-        public DeskingBookingRequestProcessor(DataInterface.IDeskBookingRepository @object)
+        private readonly IDeskBookingRepository _deskBookingRepository;
+
+        public DeskingBookingRequestProcessor(IDeskBookingRepository deskBookingRepository)
         {
+            _deskBookingRepository = deskBookingRepository;
         }
 
         public DeskBookingResult BookDesk(DeskBookingRequest request)
@@ -15,6 +19,14 @@ namespace DeskBooker.Core.Processor
             {
                 throw new ArgumentNullException(nameof(request));
             }
+
+            _deskBookingRepository.Save(new DeskBooking
+            { 
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                Date = request.Date,
+            });
 
             return new DeskBookingResult 
             { 
