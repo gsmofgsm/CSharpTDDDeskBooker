@@ -5,7 +5,7 @@ namespace DeskBooker.Core.Processor
 {
     public class DeskingBookingRequestProcessor
     {
-        public DeskingBookingRequestProcessor()
+        public DeskingBookingRequestProcessor(DataInterface.IDeskBookingRepository @object)
         {
         }
 
