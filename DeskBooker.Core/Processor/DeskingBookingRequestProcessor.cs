@@ -20,16 +20,21 @@ namespace DeskBooker.Core.Processor
                 throw new ArgumentNullException(nameof(request));
             }
 
-            _deskBookingRepository.Save(new DeskBooking
-            { 
+            _deskBookingRepository.Save(CreateDeskBooking(request));
+
+            return new DeskBookingResult
+            {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
                 Date = request.Date,
-            });
+            };
+        }
 
-            return new DeskBookingResult 
-            { 
+        private static DeskBooking CreateDeskBooking(DeskBookingRequest request)
+        {
+            return new DeskBooking
+            {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
