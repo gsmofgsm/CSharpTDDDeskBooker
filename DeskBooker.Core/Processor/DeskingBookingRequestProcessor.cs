@@ -20,15 +20,9 @@ namespace DeskBooker.Core.Processor
                 throw new ArgumentNullException(nameof(request));
             }
 
-            _deskBookingRepository.Save(CreateDeskBooking(request));
+            _deskBookingRepository.Save(Create<DeskBooking>(request));
 
-            return new DeskBookingResult
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                Email = request.Email,
-                Date = request.Date,
-            };
+            return Create<DeskBookingResult>(request);
         }
 
         private static T Create<T>(DeskBookingRequest request) where T : DeskBookingBase, new()
