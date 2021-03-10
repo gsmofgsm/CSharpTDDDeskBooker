@@ -24,7 +24,14 @@ namespace DeskBooker.DataAccess.Repositories
 
         public IEnumerable<Desk> GetAvailableDesks(DateTime date)
         {
-            throw new NotImplementedException();
+            var bookedDeskIds = _context.DeskBooking
+                .Where(x => x.Date == date)
+                .Select(b => b.DeskId)
+                .ToList();
+
+            return _context.Desk
+                .Where(x => !bookedDeskIds.Contains(x.Id))
+                .ToList();
         }
     }
 }

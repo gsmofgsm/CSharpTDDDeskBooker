@@ -11,7 +11,7 @@ namespace DeskBooker.Web.Pages
 {
     public class BookDeskModel : PageModel
     {
-        private IDeskBookingRequestProcessor _deskBookingRequestProcessor;
+        private readonly IDeskBookingRequestProcessor _deskBookingRequestProcessor;
 
         public BookDeskModel(IDeskBookingRequestProcessor deskBookingRequestProcessor)
         {
