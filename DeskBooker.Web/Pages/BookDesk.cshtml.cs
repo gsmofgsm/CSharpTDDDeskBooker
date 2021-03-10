@@ -11,11 +11,11 @@ namespace DeskBooker.Web.Pages
 {
     public class BookDeskModel : PageModel
     {
-        private IDeskBookingRequestProcessor @object;
+        private IDeskBookingRequestProcessor _deskBookingRequestProcessor;
 
-        public BookDeskModel(IDeskBookingRequestProcessor @object)
+        public BookDeskModel(IDeskBookingRequestProcessor deskBookingRequestProcessor)
         {
-            this.@object = @object;
+            _deskBookingRequestProcessor = deskBookingRequestProcessor;
         }
 
         [BindProperty]
@@ -23,7 +23,7 @@ namespace DeskBooker.Web.Pages
 
         public void OnPost()
         {
-            throw new NotImplementedException();
+            _deskBookingRequestProcessor.BookDesk(DeskBookingRequest);
         }
     }
 }
