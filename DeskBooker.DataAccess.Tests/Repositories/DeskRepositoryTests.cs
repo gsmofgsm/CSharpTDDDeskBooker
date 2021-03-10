@@ -47,5 +47,41 @@ namespace DeskBooker.DataAccess.Repositories
                 Assert.DoesNotContain(desks, d => d.Id == 1);
             }
         }
+
+        [Fact]
+        public void ShouldGetAll()
+        {
+            // Arrange
+            var options = new DbContextOptionsBuilder<DeskBookerContext>()
+                .UseInMemoryDatabase(databaseName: "ShouldGetAll")
+                .Options;
+
+            var storedList = new List<Desk>
+            {
+                new Desk(),
+                new Desk(),
+                new Desk()
+            };
+
+            using (var context = new DeskBookerContext(options))
+            {
+                foreach (var desk in storedList)
+                {
+                    context.Add(desk);
+                    context.SaveChanges();
+                }
+            }
+
+            // Act
+            List<Desk> actualList;
+            using (var context = new DeskBookerContext(options))
+            {
+                var repository = new DeskRepository(context);
+                actualList = repository.GetAll().ToList();
+            }
+
+            // Assert
+            Assert.Equal(storedList.Count(), actualList.Count());
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace DeskBooker.DataAccess.Repositories
 
         public IEnumerable<Desk> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Desk.ToList();
         }
 
         public IEnumerable<Desk> GetAvailableDesks(DateTime date)
