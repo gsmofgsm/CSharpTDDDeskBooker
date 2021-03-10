@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.DataAccess.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.Web", "DeskBooker.Web\DeskBooker.Web.csproj", "{B550AF28-F3AE-4F37-AB24-2401A93C5D61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskBooker.Web.Tests", "DeskBooker.Web.Tests\DeskBooker.Web.Tests.csproj", "{4D6699EA-9AC9-4542-B347-0D9488085927}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B550AF28-F3AE-4F37-AB24-2401A93C5D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B550AF28-F3AE-4F37-AB24-2401A93C5D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B550AF28-F3AE-4F37-AB24-2401A93C5D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6699EA-9AC9-4542-B347-0D9488085927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6699EA-9AC9-4542-B347-0D9488085927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6699EA-9AC9-4542-B347-0D9488085927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6699EA-9AC9-4542-B347-0D9488085927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
