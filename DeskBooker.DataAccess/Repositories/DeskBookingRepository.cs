@@ -24,7 +24,8 @@ namespace DeskBooker.DataAccess.Repositories
 
         public void Save(DeskBooking deskBooking)
         {
-            throw new NotImplementedException();
+            _context.DeskBooking.Add(deskBooking);
+            _context.SaveChanges();
         }
     }
 }
