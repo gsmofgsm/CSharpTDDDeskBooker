@@ -31,7 +31,12 @@ namespace DeskBooker.Web.Pages
 
                 if (result.Code == DeskBookingResultCode.Success)
                 {
-                    actionResult = RedirectToPage();
+                    actionResult = RedirectToPage("BookDeskConfirmation", new
+                    {
+                        result.DeskBookingId,
+                        result.FirstName,
+                        result.Date
+                    });
                 }
                 else if (result.Code == DeskBookingResultCode.NoDeskAvailable)
                 {

@@ -134,10 +134,10 @@ namespace DeskBooker.Web.Tests.Pages
             Assert.Equal(_deskBookingResult.DeskBookingId, deskBookingId);
 
             var firstName = Assert.Contains("FirstName", routeValues);
-            Assert.Equal(_deskBookingResult.DeskBookingId, firstName);
+            Assert.Equal(_deskBookingResult.FirstName, firstName);
 
             var date = Assert.Contains("Date", routeValues);
-            Assert.Equal(_deskBookingResult.DeskBookingId, date);
+            Assert.Equal(_deskBookingResult.Date, date);
         }
     }
 }
